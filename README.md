@@ -13,7 +13,7 @@ change MakeFile to run on different environments
 
 
 
-## Requirements
+## Requirements 
 
 Built in Linux environment (check original repository for Windows version)
 
@@ -26,7 +26,7 @@ Compiling on **Linux** by using  <code>make</code> (or alternative way by using 
 
 
 
-### Training
+## Training
 
 You can train on your own data using <code>yolov3-tiny.conv.15</code> 
 
@@ -34,7 +34,7 @@ Pre-trained model: <code>yolov3-tiny-obj_40000.weights</code> (40000 iterations 
 
 
 
-### Data Set
+## Data Set
 
 Data sets are included in the <code>img</code> file (labels included) 
 
@@ -42,7 +42,7 @@ There may be some errors for the labels, you can edit them using Yolo_mark: http
 
 
 
-#### Compiling on Linux
+## Compiling on Linux
 
 Edit <code>Makefile</code> according to your system
 
@@ -57,9 +57,14 @@ Edit <code>Makefile</code> according to your system
 * `ZED_CAMERA=1` to build a library with ZED-3D-camera support (should be ZED SDK installed), then run
     `LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH ./uselib data/coco.names cfg/yolov3.cfg yolov3.weights zed_camera`
 
-Copied from https://github.com/AlexeyAB/darknet/edit/master/README.md
+*Copied from https://github.com/AlexeyAB/darknet/edit/master/README.md
+
+
 
 Pre-trained model was trained on RTX 2080 and was run on Jetson Tx2 
 
 so if you want to run on Tx2 board you should uncomment the <code>ARCH= -gencode arch=compute_53,code=[sm_53,compute_53]</code> and make 
 
+`DataFiles` includes the files needed for training  on the `img` file. 
+
+You may need to edit `obj.data` and `yolo-obj.cfg` according to you system
