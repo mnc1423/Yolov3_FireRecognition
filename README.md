@@ -73,7 +73,9 @@ You may need to edit `obj.data` and `yolo-obj.cfg` according to you system
 
 ## Connection to Client (Windows)
 
-In `src/image.c` edit the PORT 
+In `src/image.c` edit the PORT https://github.com/mnc1423/Yolov3_FireRecognition/blob/master/src/image.c#L30
 
-and IP according to the client  (line 30)
+and IP https://github.com/mnc1423/Yolov3_FireRecognition/blob/master/src/image.c#L31
+
+according to the client  
 
