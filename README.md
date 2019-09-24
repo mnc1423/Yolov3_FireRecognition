@@ -3,15 +3,7 @@ implementation of Yolo_v3 for fire recognition
 
 Original repository https://github.com/AlexeyAB/darknet
 
-Training Weights: yolov3-tiny.conv.15 (Yolo-tiny weights) 
-
-Pretrained Weights: yolov3-tiny-obj_40000.weights 
-
 Model is made to run on a Jetson Tx2 board: https://developer.nvidia.com/embedded/jetson-tx2
-
-change MakeFile to run on different environments
-
-
 
 ## Requirements 
 
@@ -75,7 +67,6 @@ You may need to edit `obj.data` and `yolo-obj.cfg` according to you system
 
 In `src/image.c` edit the PORT https://github.com/mnc1423/Yolov3_FireRecognition/blob/master/src/image.c#L30
 
-and IP https://github.com/mnc1423/Yolov3_FireRecognition/blob/master/src/image.c#L31
+and IP https://github.com/mnc1423/Yolov3_FireRecognition/blob/master/src/image.c#L31 according to the client  
 
-according to the client  
-
+Run `WindowServer.py`  on windows run Yolo on Linux and you should get a connection 
