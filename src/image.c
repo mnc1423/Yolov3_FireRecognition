@@ -22,14 +22,14 @@
 #endif
 #include "http_stream.h"
 
-
+// Headers for Connection to client
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #define PORT 55000
-#define IP "192.168.0.122"
-
+#define IP "192.0.0.1"
+// End of code
 
 
 #define CV_RGB(r, g, b) cvScalar( (b), (g), (r), 0 )
@@ -326,15 +326,11 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
     int selected_detections_num;
     detection_with_class* selected_detections = get_actual_detections(dets, num, thresh, &selected_detections_num);
 
-/*
-	new code
-*/
+/*new code*/
     int detection_rate = 0;
     int flag = 0;
 
-/*
-	END CODE
-*/
+/*END CODE*/
 
 
 
@@ -432,9 +428,8 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
                 draw_label(im, top + width, left, label, rgb);
                 free_image(label);
 
-	        /*
-                code insert
-                */
+
+	        /*code insert*/
 
                 if(strcmp(names[selected_detections[i].best_class], "Fire") || strcmp(names[selected_detections[i].best_class], "fire"))
                 {
@@ -472,10 +467,7 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
                 }
 
 
-                /*
-                code end
-                */
-
+                /*code end*/
 
 
 

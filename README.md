@@ -68,3 +68,12 @@ so if you want to run on Tx2 board you should uncomment the <code>ARCH= -gencode
 `DataFiles` includes the files needed for training  on the `img` file. 
 
 You may need to edit `obj.data` and `yolo-obj.cfg` according to you system
+
+
+
+## Connection to Client (Windows)
+
+In `src/image.c` edit the PORT 
+
+and IP according to the client  (line 30)
+
