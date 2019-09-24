@@ -29,7 +29,6 @@
 #include <sys/socket.h>
 #define PORT 55000
 #define IP "192.0.0.1"
-// End of code
 
 
 #define CV_RGB(r, g, b) cvScalar( (b), (g), (r), 0 )
@@ -326,11 +325,9 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
     int selected_detections_num;
     detection_with_class* selected_detections = get_actual_detections(dets, num, thresh, &selected_detections_num);
 
-/*new code*/
     int detection_rate = 0;
     int flag = 0;
 
-/*END CODE*/
 
 
 
@@ -341,9 +338,7 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
         const int best_class = selected_detections[i].best_class;
 
 
-     /*NEW CODE */
         detection_rate = selected_detections[i].det.prob[best_class] * 100;
-     /*END CODE */
 
 
 
@@ -429,7 +424,6 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
                 free_image(label);
 
 
-	        /*code insert*/
 
                 if(strcmp(names[selected_detections[i].best_class], "Fire") || strcmp(names[selected_detections[i].best_class], "fire"))
                 {
@@ -465,12 +459,6 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
                 {
                     //Do Nothing
                 }
-
-
-                /*code end*/
-
-
-
             }
             if (selected_detections[i].det.mask) {
                 image mask = float_to_image(14, 14, 1, selected_detections[i].det.mask);
@@ -674,45 +662,6 @@ void draw_detections_cv_v3(IplImage* show_img, detection *dets, int num, float t
     if (ext_output) {
         fflush(stdout);
     }
-/*
-    if (strcmp(names[selected_detections[i].best_class], "fire") || strcmp(names[selected_detections[i].best_class], "Fire"))
-    {
-           int clientSocket;
-           struct sockaddr_in server_address;
-
-           char toServer[] = "Fire Detected, ";
-           char detect_rate[3];
-           sprintf(detect_rate, "%d", detection_rate);
-
-           clientSocket = socket(PF_INET, SOCK_STREAM, 0);
-           printf("Create Client Socket!!\n");
-
-           memset(&server_address, 0, sizeof(server_address));
-
-           server_address.sin_family = AF_INET;
-           server_address.sin_addr.s_addr = inet_addr(IP);
-           server_address.sin_port = htons(PORT);
-           connect(clientSocket, (struct sockaddr*)&server_address, sizeof(server_address));
-           printf("Connect Server!!\n");
-
-           char final_send[18];
-           strcat(final_send, toServer);
-           strcat(final_send, detect_rate);
-
-           write(clientSocket, final_send, strlen(final_send));
-           printf("To server Message : %s\n", final_send);
-
-           close(clientSocket);
-
-     }
-     else {
-           //do nothing
-          }
-
-
-
-
-*/
 }
 
 void draw_detections_cv(IplImage* show_img, int num, float thresh, box *boxes, float **probs, char **names, image **alphabet, int classes)
