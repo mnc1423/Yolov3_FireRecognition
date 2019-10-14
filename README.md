@@ -69,7 +69,7 @@ In `src/image.c` edit the PORT https://github.com/mnc1423/Yolov3_FireRecognition
 
 and IP https://github.com/mnc1423/Yolov3_FireRecognition/blob/master/src/image.c#L31 according to the client  
 
-Run `WindowServer.py`  on windows run Yolo on Linux and you should get a connection 
+Run `WindowServer.py`  on windows, run Yolo on Linux and you should get a connection 
 
 
 
