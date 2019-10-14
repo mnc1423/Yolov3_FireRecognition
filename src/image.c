@@ -2122,3 +2122,4 @@ void free_image(image m)
         free(m.data);
     }
 }
+
